@@ -12,16 +12,39 @@
     <div class="flex-1">
       <!-- textarea -->
       <textarea
-        name=""
+        (input)="changeTweet()"
+        [(ngModel)]="tweetMessage"
+        [maxLength]="tweetMaxLength"
         class="mb-2 bg-gray-200 focus:outline-none focus:shadow-outline focus:bg-gray-100 resize-none border border-transparent rounded-lg py-2 px-4 block w-full appearance-none font-light placeholder-gray-700"
         placeholder="What's happening ..."
-        id=""
         cols="30"
         rows="3"
       ></textarea>
 
       <!-- divider line -->
       <div class="w-auto border rounder-lg"></div>
+
+      <!-- interactive -->
+      <div class="flex justify-end items-baseline">
+        <!-- count chars -->
+        <div class="mr-5 text-gray-500 font-thin">
+          <p>{{ tweetRemain }}</p>
+        </div>
+
+        <!-- button -->
+
+        <div class="mt-5">
+          <button
+            (click)="sendTweet()"
+            type="button"
+            class="w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg bg-blue-500 hover:bg-blue-600 font-medium text-white shadow text-center"
+          >
+            Tweet
+          </button>
+        </div>
+
+        <!-- button -->
+      </div>
     </div>
   </div>
 </div>
