@@ -6,6 +6,13 @@
   <app-new-post></app-new-post>
 </div>
 
+<div
+  class="flex flex-col items-center justify-center container mx-auto"
+  *ngFor="let tw of tweets"
+>
+  <app-tweet [tweetMessage]="tw"></app-tweet>
+</div>
+
 <footer class="absolute w-screen bottom-0">
   <app-footer></app-footer>
 </footer>
