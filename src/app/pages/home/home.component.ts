@@ -6,8 +6,10 @@ import { MessagesService } from 'src/app/services/messages.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  tweets: string[] = ['Hello world!! '];
+  tweets: string[] = [];
   constructor(private service: MessagesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tweets = this.service.getMessages();
+  }
 }
